@@ -1,0 +1,22 @@
+<%= form_for book do |b| %>
+	
+	<div>
+		<%= b.label :book_name %> <br>
+		<%= b.text_area :name %>
+	</div>
+
+	<div>
+		<%= b.label :price %><br>
+		<%= b.text_area :price %>
+	</div>
+
+	<div>
+		<%= b.label :writer_name %><br>
+		<%= b.text_area :writer_name %>
+	</div>
+
+	<div>
+		<%= b.submit %>
+	</div>
+
+<% end %>

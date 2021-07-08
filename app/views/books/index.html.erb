@@ -1,5 +1,5 @@
 <%= link_to "Create New Book" , new_book_path %>
-<% @book.each do |b|%>
+<% @books.each do |b|%>
 <li style="color:green">
 <tr>	
 	<td ><%= b.name %></td>
@@ -10,5 +10,5 @@
 	<li><%= link_to "destroy", book_path(b.id), data: {:confirm => "Arue you sure?"}, :method => :delete %></li>
 <tr>
 </li>
-<hr/>
+<hr/><br/>
 <% end%>
