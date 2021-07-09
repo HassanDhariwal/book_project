@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
 	def index
+		debugger
 		@books = Book.all
 	end
 
@@ -8,7 +9,7 @@ class BooksController < ApplicationController
 	end
 
 	def create
-		@book = Book.new(params[:id])
+		@book = Book.new(book_params)
 		
 		if @book.save
 			redirect_to books_path
@@ -22,11 +23,25 @@ class BooksController < ApplicationController
 	end
 
 	def edit
+		@book = Book.find(params[:id])
 	end
 
 	def update
+		@book = Book.find(params[:id])
+		@book.update(book_params)
+		redirect_to books_path
+	end
+    
+	def destroy
+		@book = Book.find(params[:id])
+		 @book.destroy 
+		#flash[:notice] = "book record deleted" 
+		redirect_to books_path,  :notice =>"book record deleted"
 	end
 
-	def destroy
+	private
+
+	def book_params
+		params.require(:book).permit(:name, :price, :writer_name)
 	end
 end
