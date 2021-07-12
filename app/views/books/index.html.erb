@@ -1,10 +1,11 @@
-<% @books.each do |b|%>
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<% @books.each do |book|%>
 <style>
 table, th, td {
   border: 1px solid black;
 </style>
 <table style=" width:23%" }>
-	<marquee><h1 style="color:red">Book_record</h1></marquee>
+	<h1 style="color:red">Book_record</h1>
 	<tbody>
 		<tr style="background-color: lawngreen;">	
 			<th >name  </th>
@@ -12,18 +13,18 @@ table, th, td {
 			<th >price </th>
 		<tr>
 		<tr>	
-			<th style="color:blue"><%= b.name  %></th>
-			<th style="color:blue"><%= b.writer_name %></th>
-			<th style="color:blue"><%= b.price %></th>
+			<th style="color:blue"><%= book.name  %></th>
+			<th style="color:blue"><%= book.writer_name %></th>
+			<th style="color:blue"><%= book.price %></th>
 		<tr>
 	</tbody>
 </table>
 
 <ul>
 	<li><%= link_to "Create New Book" , new_book_path %></li>
-	<li><%= link_to "Show", book_path(b.id)%></li>
-	<li><%= link_to "edit", edit_book_path(b.id)%></li>
-	<li><%= link_to "destroy", book_path(b.id), data: {:confirm => "Arue you sure?"}, :method => :delete %></li>
+	<li><%= link_to "Show", book_path(book.id)%></li>
+	<li><%= link_to "edit", edit_book_path(book.id)%></li>
+	<li><%= link_to "destroy", book_path(book.id), data: {:confirm => "Arue you sure?"}, :method => :delete %></li>
 
 </ul>
 <hr/><br/>

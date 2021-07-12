@@ -1,0 +1,22 @@
+<h2>Change your password</h2>
+  <%= render "users/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+  <div class="field" style="background-color : bisque ; border: 4px solid black; width:10%"  >
+    <%= f.label :password, "New password" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field" style="background-color : bisque ; border: 4px solid black; width:15%" >
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions" style="background-color : bisque ; border: 4px solid black; width:10%">
+    <%= f.submit "Change my password" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
