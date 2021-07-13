@@ -1,3 +1,8 @@
 <h1 style="color:red"> New Book</h1>
 <%= render 'books/form', book: @book %>
-<br /> <%= link_to "Back", :back%>
+<br /> 
+<div class="container text-right">
+	<div class="d-flex justify-content-end">
+		<%= link_to "Back", :back , class: 'd-block btn btn-primary' %>
+	</div>
+</div>

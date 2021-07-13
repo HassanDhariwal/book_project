@@ -1,24 +1,26 @@
 
-<%= form_for book do |b| %>
+<%= form_for book do |book| %>
+	<div class="container"> <!-- for center alin give container -->
+		<div class="
+		group flex-nowrap mb-3">
+	  	<span class="input-group-text forn-control" id="addon-wrapping">Book_Name</span>
+	  	<%= book.text_field :name, class: 'form-control' %>
+		</div>
 
-	<div style="background-color : bisque ; border: 4px solid black; width:10%">
-		<%= b.label :name %> <br>
-		<%= b.text_area :name %>
-	</div>
-</br>
+		<div class="input-group flex-nowrap mb-3" w>
+	  	<span class="input-group-text forn-control" id="addon-wrapping">price</span>
+	  	<%= book.number_field :price, class: 'form-control' %>
+		</div>
 
-	<div style="background-color : bisque ; border: 4px solid black; width:10%">
-		<%= b.label :price %><br>
-		<%= b.text_area :price %>
-	</div>
-</br>
-	<div style="background-color : bisque ; border: 4px solid black; width:10%">
-		<%= b.label :writer_name %><br>
-		<%= b.text_area :writer_name %>
-	</div>
-</br>
-	<div>
-		<%=b.submit %>
+
+		<div class="input-group flex-nowrap mb-3">
+	  	<span class="input-group-text forn-control" id="addon-wrapping">writer_Name</span>
+	  	<%= book.text_area :writer_name,  class: 'form-control' %>
+		</div>
+		
+		<div class="text-right d-flex justify-content-end">
+			<%= book.submit class: "btn btn-primary" %>
+		</div>
 	</div>
 
 <% end %>

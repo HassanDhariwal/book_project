@@ -6,15 +6,18 @@ table, th, td {
 <h1 style="color:brown;"> Book record </h1>
 <table style=" width: 23% ; " >
 	<tr style="width: 23% ; background-color: lawngreen;" >
+		<th> id</th>
 		<th> name</th>
 		<th> writer_name </th>
 		<th> price </th>
 	</tr>
 	<tr>
+		<td><%= @book.id %></td>
 		<td><%= @book.name %></td>
 		<td><%= @book.writer_name %></td>
 		<td><%= @book.price %></td>
 	</tr>
+
 </table>	
 </form>
-<%= link_to 'Back', :back%>
+<%= link_to 'Back', :back ,class: "btn btn-primary"%>
