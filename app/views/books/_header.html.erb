@@ -9,13 +9,29 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost:3000/">Home</a>
         </li>
+        <% if current_user %>
         <li class="nav-item ">
           <%= link_to "Create New Book" , new_book_path, class: 'nav-link ' %>
         </li>
+        <%end%>
       </ul>
+      
+      <% unless current_user %>
+     
+      <div class="d-flex">
+        <%= link_to 'sigup', new_user_registration_path, class: "btn btn-outline-success" %>
+      </div>
+     
+      <div class="d-flex">
+        <%= link_to 'Login', new_user_session_path, class: "btn btn-outline-success" %>
+      </div>
+
+       <% else %>
       <div class="d-flex">
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-success" %>
       </div>
+      <% end %>
+
     </div>
   </div>
 </nav>
