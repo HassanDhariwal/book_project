@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-
   root "books#index"
+  
   resources :books
+
+  resources :products do
+    collection {post :import }
+  end 
+  root to: "products#index"
 end

@@ -1,0 +1,5 @@
+<h12> importing books</h12>
+<%= form_tag import_products_path, multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag "import" %>
+<% end %>
