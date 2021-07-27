@@ -12,7 +12,7 @@ table, th, td {
     <tr class="bg-success">
       <th>id</th>
       <th>name</th>
-      <th>writer_name</th>
+      <th>Author_name</th>
       <th>price</th>
       <% if current_user %>
       <th>Show</th> 
@@ -26,7 +26,7 @@ table, th, td {
 		<tr >	
 			<th ><%= book.id %></th>
 			<td ><%= book.name  %></td>
-			<td ><%= book.writer_name %></td>
+			<td ><%= book.author.name %></td>
 			<td ><%= book.price %></td>
 
 			<% if current_user %> <!-- ager koi user present ha to tb ya show ker vay other vise nahi -->
