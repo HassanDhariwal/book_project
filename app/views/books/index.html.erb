@@ -1,7 +1,7 @@
 
 <style>
 table, th, td {
-  border: 1px solid black; 
+  border: 1px solid black; }
 </style>
 <br>
 
@@ -26,7 +26,7 @@ table, th, td {
 		<tr >	
 			<th ><%= book.id %></th>
 			<td ><%= book.name  %></td>
-			<td ><%= book.author.name %></td>
+			<td ><%= book.user.first_name%></td>
 			<td ><%= book.price %></td>
 
 			<% if current_user %> <!-- ager koi user present ha to tb ya show ker vay other vise nahi -->
