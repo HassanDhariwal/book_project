@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  price: 
-  writer_name: MyString
+  price:
+  author_name: MyString
 
 two:
   name: MyString
   price: 
-  writer_name: MyString
+  author_name: MyString

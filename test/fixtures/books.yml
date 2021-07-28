@@ -3,9 +3,9 @@
 one:
   name: MyString
   price: 1
-  writer_name: MyString
+  author_name: MyString
 
 two:
   name: MyString
   price: 1
-  writer_name: MyString
+  author_name: MyString
