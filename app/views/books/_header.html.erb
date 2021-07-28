@@ -9,11 +9,23 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost:3000/">Home</a>
         </li>
+        
         <% if current_user %>
         <li class="nav-item ">
           <%= link_to "Create New Book" , new_book_path, class: 'nav-link ' %>
         </li>
         <%end%>
+
+        <% if current_user %>
+        <li class="nav-item ">
+          <%= link_to "Create a Author" , new_author_path, class: 'nav-link ' %>
+        </li>
+
+        <li class="nav-item ">
+          <%= link_to "ALL Authors LIST " , authors_path, class: 'nav-link ' %>
+        </li>
+        
+        <%end%>  
       </ul>
       
       <% unless current_user %>

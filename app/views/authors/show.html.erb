@@ -1,0 +1,19 @@
+<form>
+<style>
+table, th, td {
+  border: 1px solid black;}
+</style>
+<h1 style="color:brown;"> Author record </h1>
+<table style=" width: 23% ; " >
+	<tr style="width: 23% ; background-color: lawngreen;" >
+		<th> id</th>
+		<th> name</th>
+		<tr>
+	<tr>
+		<td><%= @author.id %></td>
+		<td><%= @author.name %></td>
+	<tr>
+
+</table>	
+</form>
+<%= link_to 'Back', :back ,class: "btn btn-primary"%>

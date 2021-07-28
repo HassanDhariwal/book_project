@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   root "books#index"
-  
   resources :books
+  
+  root "authors#index"
+  resources :authors
 
   resources :products do
     collection {post :import }
