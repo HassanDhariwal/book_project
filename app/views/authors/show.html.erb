@@ -3,9 +3,9 @@
 table, th, td {
   border: 1px solid black;}
 </style>
-<h1 style="color:brown;"> Author record </h1>
-<table style=" width: 23% ; " >
-	<tr style="width: 23% ; background-color: lawngreen;" >
+<h1 style="color:brown; text-align: center; "> Author record </h1>
+<table class="table table-striped  table-hover " >
+	<tr class="bg-success" >
 		<th> id</th>
 		<th> name</th>
 		<tr>
@@ -13,7 +13,9 @@ table, th, td {
 		<td><%= @author.id %></td>
 		<td><%= @author.name %></td>
 	<tr>
-
 </table>	
 </form>
+<br/>
+<h1 style="color:brown; text-align: center;">Author_books</h1>
+<%= render 'books/index', book: @books %>
 <%= link_to 'Back', :back ,class: "btn btn-primary"%>

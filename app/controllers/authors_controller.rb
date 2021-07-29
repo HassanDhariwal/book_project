@@ -2,6 +2,7 @@ class AuthorsController < ApplicationController
 
 	def index
 		@authors =  Author.all
+		@count = Book.group("author_id").count
 	end
 
 	def new
@@ -23,6 +24,7 @@ class AuthorsController < ApplicationController
 
 	def show
 		@author = Author.find(params[:id])
+		@books = Book.where(author_id: params[:id])
 	end
 	
 	def edit

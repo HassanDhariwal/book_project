@@ -10,6 +10,7 @@ table, th, td {
     <tr class="bg-danger">
       <th>id</th>
       <th>Author_name</th>
+      <th>Book_Author</th>
       <% if current_user %>
       <th>Show</th> 
       <th>edit</th>
@@ -21,6 +22,7 @@ table, th, td {
 		<tr >	
 			<th ><%= author.id %></th>
 			<td ><%= author.name  %></td>
+			<td ><%= @count[author.id] %> </td>
 			<% if current_user %> <!-- ager koi user present ha to tb ya show ker vay other vise nahi -->
 			<td ><%= link_to "Show" , author_path(author.id), class: "btn btn-secondary"%></td>
 			<td ><%= link_to "edit", edit_author_path(author.id), class: "btn btn-primary" %></td>

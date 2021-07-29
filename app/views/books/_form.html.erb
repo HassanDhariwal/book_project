@@ -13,8 +13,8 @@
 		</div>
 
     <div class="input-group flex-nowrap mb-3">
-      <span class="input-group-text forn-control" id="addon-wrapping">writer_Name</span>
-      <%= book.collection_select :author_id, Author.order(:name),:id,:name, include_blank: true, class: 'form-control' %>
+      <span class="input-group-text forn-control" id="addon-wrapping">Author_Name</span>
+      <%= book.collection_select :author_id, Author.order(:name),:id,:name, include_blank: true, class: 'form-control'%>
     </div>
 		
 		<div class="text-right d-flex justify-content-end">
