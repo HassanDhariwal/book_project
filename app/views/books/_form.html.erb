@@ -7,14 +7,17 @@
 	  	<%= book.text_field :name, class: 'form-control' %>
 		</div>
 
-		<div class="input-group flex-nowrap mb-3" w>
+		<div class="input-group flex-nowrap mb-3" >
 	  	<span class="input-group-text forn-control" id="addon-wrapping">price</span>
 	  	<%= book.number_field :price, class: 'form-control' %>
 		</div>
 
     <div class="input-group flex-nowrap mb-3">
       <span class="input-group-text forn-control" id="addon-wrapping">Author_Name</span>
-      <%= book.collection_select :author_id, Author.order(:name),:id,:name, include_blank: true, class: 'form-control'%>
+      <%= book.text_field :writer_name,  class: 'form-control' %>
+    <%= book.collection_select :author_id, Author.order(:name),:id,:name, include_blank: true, class: 'form-control'%>
+
+
     </div>
 		
 		<div class="text-right d-flex justify-content-end">

@@ -11,7 +11,16 @@ class BooksController < ApplicationController
 	end
 
 	def create
-		@book = Book.new(book_params)
+
+		if params[:author_id].nil?
+			author = Author.create(name: params[:book][:writer_name]) 
+			
+			new_book_params = book_params.merge(author_id: author.id)
+
+		end
+
+
+		@book = Book.new(new_book_params)
 		if @book.save
 			redirect_to books_path
 		else
@@ -36,7 +45,6 @@ class BooksController < ApplicationController
 	def destroy
 		@book = Book.find(params[:id])
 		 @book.destroy 
-		#flash[:notice] = "book record deleted" 
 		redirect_to books_path,  :notice =>"book record deleted"
 	end
 

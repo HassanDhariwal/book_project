@@ -8,10 +8,15 @@ table, th, td {
 	<tr class="bg-success" >
 		<th> id</th>
 		<th> name</th>
+		<th> Edit</th>
+		<th> Destory</th>
 		<tr>
 	<tr>
 		<td><%= @author.id %></td>
 		<td><%= @author.name %></td>
+		<td ><%= link_to "Edit", edit_author_path(@author.id), class: "btn btn-primary" %></td>
+		<td ><%= link_to "Destroy", edit_author_path(@author.id), class: "btn btn-danger" %></td>
+
 	<tr>
 </table>	
 </form>
